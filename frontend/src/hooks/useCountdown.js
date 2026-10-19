@@ -1,23 +1,20 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react';
 
-const useCountdown = (second, onExpire) => {
-    const [left, setLeft] = useState(second);
+// Repeating countdown. Calls onExpire every time it reaches 0, then restarts.
+const useCountdown = (seconds, onExpire) => {
+    const [left, setLeft] = useState(seconds);
     const cb = useRef(onExpire);
+    useEffect(() => { cb.current = onExpire; });
 
-    useEffect(() => { cb.current = onExpire; })
     useEffect(() => {
-        const id = setInterval(() => setLeft((1) => 1 - 1), 1000);
+        const id = setInterval(() => setLeft((l) => l - 1), 1000);
         return () => clearInterval(id);
     }, []);
+
     useEffect(() => {
-        if(left <= 0 )
-        {
-            cb.current();
-            setLeft(second)
-        }
-    }, [left, second]);
-    return [left, () => setLeft(second)];
+        if (left <= 0) { cb.current(); setLeft(seconds); }
+    }, [left, seconds]);
 
+    return [left, () => setLeft(seconds)];
 }
-
-export default useCountdown
+export default useCountdown;
