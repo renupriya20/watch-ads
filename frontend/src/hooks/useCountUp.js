@@ -22,7 +22,7 @@ const useCountUp = (target, duration = 900) => {
             }
         }
 
-        ref = requestAnimationFrame(tick);
+        raf = requestAnimationFrame(tick);
 
         return () => cancelAnimationFrame(raf);
     }, [target, duration]);
