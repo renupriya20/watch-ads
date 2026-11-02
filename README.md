@@ -47,10 +47,10 @@ npm run preview  # preview build
 ```
 
 ## Screenshots
-_Add screenshots here._
+https://github.com/renupriya20/watch-ads/blob/56a73ea4fc8a72aace1655ffd8dab28627d8a9d0/Screenshot%202026-11-02%20163642.png
 
 ## Live Demo
 _Add your Vercel/Netlify link here._
 
 ## Author
-Your Name – [GitHub](https://github.com/renupriya20)
+Renu Kumari – [GitHub](https://github.com/renupriya20)
