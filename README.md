@@ -34,7 +34,7 @@ src/
 
 ## Installation
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/renupriya20/watch-ads
 cd veloop-watchads
 npm install
 ```
