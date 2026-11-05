@@ -7,22 +7,31 @@ const POINTS = [
     { icon: Landmark, title: 'Withdraw to bank', text: "Withdraw to your linked bank account once the minimum withdrawal conditions are met." },
 ];
 
-// Reward information banner with 3 info cards
-export default function RewardInfo() {
+const RewardInfo = () => {
+
     return (
         <section className={`${s.card} ${s.banner} ${s.fade}`}>
             <div className={s.bannerHead}>
                 <ShieldCheck size={30} color="var(--green)" />
-                <div><strong>Your VEs. Your Rewards.</strong><div className={s.muted}>Secure, transparent and rewarding.</div></div>
+                <div>
+                    <strong>Your VEs. Your Rewards.</strong>
+                    <div className={s.muted}>Secure, transparent and rewarding.</div>
+                </div>
             </div>
+
             <div className={s.infoGrid}>
                 {POINTS.map(({ icon: Icon, title, text }) => (
                     <div key={title} className={s.infoCard}>
                         <Icon size={22} color="var(--primary)" />
-                        <div><strong>{title}</strong><p className="mb-0 small">{text}</p></div>
+                        <div>
+                            <strong>{title}</strong>
+                            <p className="mb-0 small">{text}</p>
+                        </div>
                     </div>
                 ))}
             </div>
         </section>
     );
 }
+
+export default RewardInfo;

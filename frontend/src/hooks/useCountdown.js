@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
-// Repeating countdown. Calls onExpire every time it reaches 0, then restarts.
-const useCountdown = (seconds, onExpire) => {
+export default function useCountdown(seconds, onExpire) {
     const [left, setLeft] = useState(seconds);
     const cb = useRef(onExpire);
+
     useEffect(() => { cb.current = onExpire; });
 
     useEffect(() => {
@@ -17,4 +17,3 @@ const useCountdown = (seconds, onExpire) => {
 
     return [left, () => setLeft(seconds)];
 }
-export default useCountdown;

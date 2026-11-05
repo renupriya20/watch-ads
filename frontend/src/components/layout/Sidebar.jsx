@@ -1,4 +1,14 @@
-import { Home, PlayCircle, Gift, Wallet, Clock, User, Settings, HelpCircle, Crown } from 'lucide-react';
+import {
+    Home,
+    PlayCircle,
+    Gift,
+    Wallet,
+    Clock,
+    User,
+    Settings,
+    HelpCircle,
+    Crown
+} from 'lucide-react';
 import s from './Layout.module.css';
 
 const NAV = [
@@ -12,7 +22,7 @@ const NAV = [
     { label: 'Help & Support', icon: HelpCircle },
 ];
 
-export default function Sidebar({ open, onClose }) {
+const Sidebar = ({ open, onClose }) => {
     return (
         <aside className={`${s.sidebar} ${open ? s.open : ''}`}>
             <div className={s.logo}><b>V</b>ELOOP<small>REWARDS</small></div>
@@ -22,12 +32,17 @@ export default function Sidebar({ open, onClose }) {
                     <Icon size={18} /> {label}
                 </a>
             ))}
+
             <div className={s.premium}>
                 <strong><Crown size={14} color="#f5a623" /> Go Premium</strong>
                 <div>Higher earnings, exclusive offers and more.</div>
                 <button>Upgrade Now →</button>
             </div>
+
             <div className={s.copy}>© 2026 VELOOP Rewards. All rights reserved.</div>
+
         </aside>
     );
 }
+
+export default Sidebar;

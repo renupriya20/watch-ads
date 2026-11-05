@@ -2,7 +2,8 @@ import { CheckCircle2 } from 'lucide-react';
 import Confetti from './Confetti';
 import s from '../pages/WatchAds.module.css';
 
-export default function WatchModal({ session, total, onClose }) {
+const WatchModal = ({ session, total, onClose }) => {
+
     const { ad, left, done } = session;
     const percent = ((total - left) / total) * 100;
 
@@ -23,7 +24,9 @@ export default function WatchModal({ session, total, onClose }) {
                         <h3>{ad.brand}</h3>
                         <p className={s.muted}>Please keep watching to earn your reward.</p>
                         <div className={s.player}>▶ Ad playing...</div>
-                        <div className={s.track}><div className={s.fill} style={{ width: `${percent}%` }} /></div>
+                        <div className={s.track}>
+                            <div className={s.fill} style={{ width: `${percent}%` }} />
+                        </div>
                         <strong>{left}s remaining</strong>
                     </>
                 )}
@@ -31,3 +34,5 @@ export default function WatchModal({ session, total, onClose }) {
         </div>
     );
 }
+
+export default WatchModal;

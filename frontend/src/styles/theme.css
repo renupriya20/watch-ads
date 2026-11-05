@@ -1,4 +1,3 @@
-/* Global design tokens. Theme is switched via data-theme on <html>. */
 :root {
     --bg: #f6f4ff;
     --surface: #ffffff;

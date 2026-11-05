@@ -1,16 +1,25 @@
-import { Gift } from 'lucide-react';
+import { Gift, ArrowRight } from 'lucide-react';
 import s from '../pages/WatchAds.module.css';
 
-// Bonus banner - /watchAd-bonus page par redirect karta hai
-export default function BonusBanner() {
+const BonusBanner = () => {
     return (
         <a href="/watchAd-bonus" className={s.bonus}>
-            <Gift size={28} />
-            <div>
-                <strong>Bonus Rewards available!</strong>
-                <div className="small">Complete special tasks and earn extra VEs.</div>
+            <span className={s.bonusIcon}>
+                <Gift size={30} />
+            </span>
+            <div className={s.bonusBody}>
+                <span className={s.bonusTag}>BONUS REWARD</span>
+                <strong>Watch 3 bonus ads and earn +100 VEs extra</strong>
+
+                <div className={s.bonusTrack}>
+                    <i style={{ width: '33%' }} />
+                </div>
+
+                <small>1 of 3 bonus ads completed</small>
             </div>
-            <span className={s.bonusGo}>Claim →</span>
+            <span className={s.bonusBtn}>Claim Bonus <ArrowRight size={16} /></span>
         </a>
     );
 }
+
+export default BonusBanner;

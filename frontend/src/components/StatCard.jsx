@@ -1,13 +1,15 @@
 import useCountUp from '../hooks/useCountUp';
 import s from '../pages/WatchAds.module.css';
 
-export default function StatCard({ icon: Icon, label, value, suffix, hint, color }) {
+const StatCard = ({ icon: Icon, label, value, suffix, hint, color }) => {
     const count = useCountUp(value);
     return (
-        <div className={`${s.card} ${s.stat} ${s.fade}`}>
-            <span className={s.statIcon} style={{ background: `${color}22`, color }}>
+        <div className={`${s.card} ${s.stat} ${s.fade}`} style={{ '--accent': color }}>
+
+            <span className={s.statIcon} style={{ background: `linear-gradient(135deg, ${color}, ${color}aa)` }}>
                 <Icon size={22} />
             </span>
+
             <div>
                 <div className={s.muted}>{label}</div>
                 <div className={s.statValue}>
@@ -18,3 +20,5 @@ export default function StatCard({ icon: Icon, label, value, suffix, hint, color
         </div>
     );
 }
+
+export default StatCard;

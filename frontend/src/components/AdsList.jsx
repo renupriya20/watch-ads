@@ -2,7 +2,7 @@ import { PartyPopper, Inbox } from 'lucide-react';
 import AdCard from './AdCard';
 import s from '../pages/WatchAds.module.css';
 
-export default function AdsList({ ads, loading, activeId, onWatch }) {
+const AdsList = ({ ads, loading, activeId, onWatch, showAllDone = true }) => {
     if (loading) {
         return (
             <div className="row g-3">
@@ -25,7 +25,7 @@ export default function AdsList({ ads, loading, activeId, onWatch }) {
         );
     }
 
-    const allDone = ads.every((a) => a.status === 'watched');
+    const allDone = showAllDone && ads.every((a) => a.status === 'watched');
 
     return (
         <>
@@ -51,3 +51,5 @@ export default function AdsList({ ads, loading, activeId, onWatch }) {
         </>
     );
 }
+
+export default AdsList;
