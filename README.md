@@ -47,7 +47,7 @@ npm run preview  # preview build
 ```
 
 ## Screenshots
-https://github.com/renupriya20/watch-ads/blob/56a73ea4fc8a72aace1655ffd8dab28627d8a9d0/Screenshot%202026-11-02%20163642.png
+https://github.com/renupriya20/watch-ads/blob/cd52c93463226f904d3c276069e2cce5cfe76492/Screenshot%202026-11-05%20191703.png
 
 ## Live Demo
 https://watch-ads-beta.vercel.app/
